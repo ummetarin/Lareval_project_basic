@@ -9,3 +9,6 @@ Route::get('/', function () {
 // controller route
 //create controller er ekta method jeta post contioller er modde takhbe
 Route::get('/create', [PostController::class, 'create']);
+
+// for getting data 
+Route::post('/store', [PostController::class, 'storedetails'])->name('store');

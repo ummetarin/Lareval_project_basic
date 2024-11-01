@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title><link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
     <style type="text/tailwindcss">
     @layer utilities {
@@ -151,18 +152,25 @@
   </style>
 </head>
 <body>
+<div>
+<div class="cont flex flex-row justify-between ">
+  <h2 class="text-green-700">Home</h2>
+  <button class="btn btn-active btn-secondary"><a href="/">Back to Home</a></button>
+  </div>
 <div class="container">
+    
     <div class="heading">Sign In</div>
-    <form action="" class="form">
+    <form action="{{route('store')}}" method="POST" class="form">
+        @csrf
       <input required="" class="input" type="text" name="name" id="name" placeholder="Name">
       <input required="" class="input" type="text" name="description" id="description" placeholder="description">
       <input required="" class="input" type="file" name="image" id="image" placeholder="image">
       
       <input required="" class="input" type="number" name="price" id="price" placeholder="price">
-      
-      <input class="login-button" type="submit" value="Sign In">
+      <input class="login-button" type="submit" value="Post">
       
     </form>
+</div>
     
 </body>
 </html>
